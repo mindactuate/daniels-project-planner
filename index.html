@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang=de><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Daniels Project Planner</title><script src=https://cdn.tailwindcss.com></script><script src=https://cdn.jsdelivr.net/npm/chart.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel=stylesheet><link rel=stylesheet href=/projectplanner.c4429a5e.css><body class="md:p-8 p-4 sm:p-6">
+    <div class="max-w-full mx-auto">
+      <header class="mb-8 text-center">
+        <h1 id=main-title contenteditable class="font-bold p-2 sm:text-4xl text-3xl text-gray-800">
+          Projektplaner
+        </h1>
+        <p id=main-subtitle contenteditable class="mt-2 p-1 text-gray-600 text-lg">
+          Lade deine Konfigurations- und Projektdateien, um zu beginnen.
+        </p>
+      </header>
+
+      
+      <div id=dashboard-container class="bg-white mb-8 p-6 rounded-lg shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-bold text-2xl text-gray-700">Projekt-Dashboard</h2>
+          <select id=dashboard-team-filter class="bg-gray-50 border p-2 rounded-md">
+            <option value=all>Gesamtes Projekt</option>
+          </select>
+        </div>
+        <div id=dashboard-metrics class="gap-6 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2">
+          
+        </div>
+      </div>
+
+      <div id=file-ops-container class="flex flex-col flex-wrap gap-4 items-center justify-center mb-2 sm:flex-row">
+        
+        <button id=open-project-btn class="action-btn bg-blue-600 font-medium hover:bg-blue-700 px-5 py-2.5 rounded-md text-white transition">
+          Projekt öffnen (Ctrl/Cmd+O)
+        </button>
+        <input type=file id=project-json-upload accept=.json class=hidden>
+        <button id=quick-save-project-btn class="action-btn bg-emerald-600 font-medium hover:bg-emerald-700 px-5 py-2.5 rounded-md text-white transition">
+          Schnell speichern (Ctrl/Cmd+S)
+        </button>
+        <button id=save-as-project-json-btn class="action-btn bg-cyan-700 font-medium hover:bg-cyan-800 px-5 py-2.5 rounded-md text-white transition">
+          Speichern unter… (Shift+Ctrl/Cmd+S)
+        </button>
+        <button id=add-team-btn class="action-btn bg-purple-600 font-medium hover:bg-purple-700 px-5 py-2.5 rounded-md text-white transition">
+          Neues Team +
+        </button>
+        <button id=clear-storage-btn class="action-btn bg-red-600 font-medium hover:bg-red-700 px-5 py-2.5 rounded-md text-white transition">
+          Browser-Cache löschen
+        </button>
+      </div>
+
+      <div id=save-status-container class="flex gap-3 h-8 items-center justify-center mb-8 text-center text-gray-600">
+        <span id=save-status-text></span>
+        <div id=save-status-warning class="hidden tooltip">
+          <span class=text-xl>⚠️</span>
+          <span class=tooltip-text>Die automatische Speicherung ist ein Komfort-Feature. Speichere
+            dein Projekt als Datei, um es permanent zu sichern oder zu
+            teilen.</span>
+        </div>
+      </div>
+
+      <div id=project-teams class=space-y-12>
+        <p id=initial-prompt class="text-center text-gray-500 text-lg">
+          Lade eine Projektdatei oder füge ein neues Team hinzu.
+        </p>
+      </div>
+      <footer class="mt-12 text-center text-gray-500 text-sm">
+        <span id=copyright-text></span>
+      </footer>
+    </div>
+
+    <div id=modal class=modal-overlay>
+      <div class=modal-content>
+        <p id=modal-text></p>
+        <div id=modal-actions class="flex gap-4 justify-center">
+          <button id=modal-confirm-btn class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-md text-white transition">
+            OK
+          </button>
+          <button id=modal-cancel-btn class="bg-gray-300 hover:bg-gray-400 px-6 py-2 rounded-md text-gray-800 transition">
+            Abbrechen
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type=module src=/projectplanner.0b6eb669.js defer></script>
+  
+
